@@ -1,40 +1,102 @@
 import { Component } from "react";
-import { formatTime, setStartDate, date } from '../functii';
-import { StyleSheet, Text, SafeAreaView, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, FlatList, SafeAreaView, View, Button, Image } from 'react-native';
 import Space from "../components/Space";
-import TimpPetrecut from "../components/timp";
-export default class Informatii extends Component
-{
-    render()
+
+const continut = [
     {
+        id: 0,
+        subtitlu: "Statistici",
+        text: "» 96% din copiii 12-17 ani folosesc telefonul\n" +
+        "» 71% sunt dependenți de smartphone\n" +
+        "» 83% se simt anxioși fără telefon\n" +
+        "» 100% șanse să fii și tu dependent :)"
+    },
+    {
+        id: 1,
+        subtitlu: "",
+        text: ""
+    },
+    {
+        id: 1,
+        subtitlu: "",
+        text: ""
+    },
+    {
+        id: 3,
+        subtitlu: "Boli provocate de dependență",
+        text: "» anxietate (100%)\n" +
+        "» miopie/hipermetropie (75%)\n" +
+        "» namofobie (60%)"
+    },
+    {
+        id: 4,
+        subtitlu: "Activități alternative",
+        text: "Pentru a reduce timpul petrecut pe telefon, îți recomand...\n" +
+        "» să citești o carte\n" +
+        "» să faci voluntariat\n" +
+        "» să îți plimbi animalul de companie (dacă n-ai, adoptă unul :) )\n" +
+        "» să ieși în oraș cu prietenii"
+    },
+    {
+        id: 5,
+        subtitlu: "",
+        text: ""
+    },
+    {
+        id: 6,
+        subtitlu: "",
+        text: ""
+    },
+    {
+        id: 7,
+        subtitlu: "Recomandare de cărți",
+        text: "test"
+    }
+];
+
+const continut_prelucrat = ({item}) => (
+    <View style={styles.container}>
+        <Text style={styles.subtitlu}>{item.subtitlu}</Text>
+        <Text>{item.text}</Text>
+    </View>
+);
+
+const Info = () => {
+    return (
+        <FlatList
+            data={continut}
+            renderItem={continut_prelucrat}
+            numColumns={2}
+        />
+    );
+};
+
+export const Informatii = () => {
         return (
             <View>
-                <Text style={styles.title}>Informații importante</Text>
+                <Text style={styles.title}>Informații și sfaturi pentru folosirea telefonului</Text>
+                <Info/>
+                <Text style={styles.title}>II. Cum sa te protejezi pe Internet</Text>
                 <Space/>
-                <View style={styles.container}>
-                    <Text style={styles.comp}>test</Text>
-                    <Text style={styles.comp}>test2</Text>
-                    <Text style={styles.comp}>test2</Text>
-                    <Text style={styles.comp}>test2</Text>
-                </View>
+                <Space/>
             </View>
           );
-    }
-}
+        };
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'flex-start',
-      flexDirection: "row",
-      flexWrap: "wrap",
-    },
-    comp: {
-        width: '50%',
+      alignItems: 'center',
+      width: '48%'
     },
     title: {
         alignItems: 'center',
+        textAlign: 'center',
         fontSize: 18,
     },
+    subtitlu: {
+        fontWeight: 'bold',
+        textAlign: 'center'
+    }
   });

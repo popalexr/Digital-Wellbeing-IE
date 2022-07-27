@@ -2,14 +2,16 @@ import { Component, useState } from "react";
 import { formatTime, setStartDate, date } from './functii';
 import { StyleSheet, Text, SafeAreaView, View, Button, Image } from 'react-native';
 import Space from "./components/Space";
-import Main from "./pagini/main"
-import Informatii from "./pagini/info";
+import Main from "./pagini/main";
+import Setari from "./pagini/setari";
+import {Informatii} from "./pagini/info";
 import TimpPetrecut from "./components/timp";
 
 function pg(pagina)
 {
   if(pagina == "Main") return (<Main/>);
   else if(pagina == "Info") return (<Informatii/>);
+  else if(pagina == "Settings") return (<Setari/>);
 }
 
 export default function App() {

@@ -11,11 +11,15 @@ let pag = "Main";
 function setStartDate()
 {
     const appState = useRef(AppState.currentState);
-    date = 0;
-    setInterval(() => {
-       if(AppState.currentState != "inactive") date ++;
-       //console.log(AppState.currentState);
-    }, 1000);
+    if(typeof date == 'undefined' || date == null) 
+    {
+        date = 0;
+        setInterval(() => {
+        if(AppState.currentState != "inactive") date ++;
+        console.log(date);
+        //console.log(AppState.currentState);
+        }, 1000);
+    }
 }
 
 function formatTime(secunde) {
