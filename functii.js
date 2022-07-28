@@ -5,9 +5,6 @@ import {AppState} from 'react-native';
 import { useRef } from "react";
 
 let date;
-
-let pag = "Main";
-
 function setStartDate()
 {
     const appState = useRef(AppState.currentState);
@@ -15,8 +12,9 @@ function setStartDate()
     {
         date = 0;
         setInterval(() => {
-        if(AppState.currentState != "inactive") date ++;
-        console.log(date);
+        if(appState.current != "inactive") date ++;
+        //console.log(appState);
+        //console.log(date);
         //console.log(AppState.currentState);
         }, 1000);
     }

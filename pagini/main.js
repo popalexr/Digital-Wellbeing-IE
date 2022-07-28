@@ -10,6 +10,9 @@ export default class Main extends Component
         return (
             <View>
               <TimpPetrecut txt={formatTime(date)}/>
+              <Space/>
+              <Text style={styles.txt}>Timp recomandat pt a sta pe PC/telefon</Text>
+              <Text style={styles.txt}>2 ORE</Text>
             </View>
         );
     }
@@ -27,4 +30,8 @@ const styles = StyleSheet.create({
         paddingRight: 30,
         paddingLeft: 30,
     },
+    txt: {
+        alignItems: 'center',
+        textAlign: 'center'
+    }
   });

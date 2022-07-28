@@ -50,7 +50,9 @@ const continut = [
     {
         id: 7,
         subtitlu: "Recomandare de cărți",
-        text: "test"
+        text: "» ...\n"+
+        "» ...\n" +
+        "» ...\n"
     }
 ];
 
@@ -76,7 +78,6 @@ export const Informatii = () => {
             <View>
                 <Text style={styles.title}>Informații și sfaturi pentru folosirea telefonului</Text>
                 <Info/>
-                <Text style={styles.title}>II. Cum sa te protejezi pe Internet</Text>
                 <Space/>
                 <Space/>
             </View>
