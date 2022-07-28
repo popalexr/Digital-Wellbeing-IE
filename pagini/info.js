@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { StyleSheet, Text, FlatList, SafeAreaView, View, Button, Image } from 'react-native';
 import Space from "../components/Space";
+import {theme} from "../functii";
 
 const continut = [
     {
@@ -87,7 +88,7 @@ export const Informatii = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: theme,
       alignItems: 'center',
       width: '48%'
     },

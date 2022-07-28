@@ -5,6 +5,7 @@ import {AppState} from 'react-native';
 import { useRef } from "react";
 
 let date;
+let theme="#fff";
 function setStartDate()
 {
     const appState = useRef(AppState.currentState);
@@ -28,5 +29,10 @@ function formatTime(secunde) {
     return timp;
 }
 
+function setTheme(thm)
+{
+    theme = thm;
+    console.log(theme);
+}
 
-export {formatTime, setStartDate, date};
+export {formatTime, setStartDate, date, setTheme, theme};

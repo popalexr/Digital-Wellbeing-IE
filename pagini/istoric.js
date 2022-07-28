@@ -1,6 +1,7 @@
 import {View, Text, StyleSheet, FlatList} from "react-native";
 import React, { Component } from 'react';
 import Space from '../components/Space';
+import {theme} from "../functii";
 
 const continut = [
     {
@@ -103,7 +104,7 @@ export default class Sfaturi extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: theme,
       alignItems: 'center',
       width: '48%'
     },

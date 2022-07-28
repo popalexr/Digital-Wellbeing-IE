@@ -1,10 +1,14 @@
 import {View, Text, StyleSheet, TextInput} from "react-native";
 import React, { Component, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import {formatTime, date} from '../functii';
+import {formatTime, date, theme, setTheme} from '../functii';
 import Space from '../components/Space';
 
 export default class Setari extends Component {
+    state = {
+        tema: "#574e4d"
+    };
+
     render() {
         var erori = "";
         return (
@@ -23,8 +27,10 @@ export default class Setari extends Component {
                 </View>
                 <Space/>
                 <View style={styles.row}>
-                    <Text>Alege tema</Text>
-                    <Text></Text>
+                    <Text>Alege tema  </Text>
+                    <Text onPress={() => {this.setState({tema: "#574e4d"}); setTheme(this.state.tema);}}>DARK </Text>
+                    <Text> | </Text>
+                    <Text onPress={() => {this.setState({tema: "#fff"}); setTheme(this.state.tema);}}> LIGHT</Text>
                 </View>
                 <Text>{erori}</Text>
             </View>
@@ -35,7 +41,7 @@ export default class Setari extends Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: theme,
       alignItems: 'center',
       width: '48%'
     },
